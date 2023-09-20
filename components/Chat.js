@@ -51,7 +51,7 @@ const Chat = ({ route, navigation }) => {
     }
 
     return (
-        <View style={[styles.container]}>
+        <View style={[styles.container, { backgroundColor: color }]}>
             <GiftedChat
                 messages={messages}
                 renderBubble={renderBubble}
@@ -70,7 +70,8 @@ const Chat = ({ route, navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    }
+        backgroundColor: '#474056'
+    },
 });
 
 export default Chat;
