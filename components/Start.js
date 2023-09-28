@@ -13,7 +13,7 @@ const backgroundColors = {
 const Start = ({ navigation }) => {
     const auth = getAuth();
     const [name, setName] = useState('');
-    const [color, setColor] = useState(backgroundColors.d);
+    const [color, setColor] = useState('');
 
     const signInUser = () => {
         signInAnonymously(auth)
@@ -21,7 +21,7 @@ const Start = ({ navigation }) => {
             navigation.navigate('Chat', {
                 userID: result.user.uid,
                 name: name,
-                backgroundColors: backgroundColors,
+                color: color,
             });
             Alert.alert("Signed in Successfully!");
         })
@@ -50,7 +50,9 @@ const Start = ({ navigation }) => {
                             { backgroundColor: backgroundColors.a },
                         ]}
                         onPress={() => setColor(backgroundColors.a)}
-                        ></TouchableOpacity>
+                        >
+                            <View style={{backgroundColor:backgroundColors.a}}></View>
+                        </TouchableOpacity>
                         <TouchableOpacity
                         style={[
                             styles.circle,
