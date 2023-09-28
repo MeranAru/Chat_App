@@ -48,7 +48,7 @@ const Chat = ({ route, navigation, db }) => {
             }}
         />
     }
-
+    console.log('color:', color)
     return (
         <View style={[styles.container, { backgroundColor: color }]}>
             <GiftedChat
@@ -60,11 +60,11 @@ const Chat = ({ route, navigation, db }) => {
                 }}
                 renderBubble={renderBubble}
             />
-            <FlatList
+            {/*<FlatList
                 data={messages}
                 renderItem={({ message }) =>
                 <Text>{message.name}: {message.messages.join(", ")}</Text>}
-            />
+            />*/}
             { Platform.OS === 'android' ? <KeyboardAvoidingView behavior="height" /> : null }
             <Text>Hello User!</Text>
         </View>
