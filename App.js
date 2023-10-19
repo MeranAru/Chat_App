@@ -8,6 +8,7 @@ const Stack = createNativeStackNavigator();
 //importing firestore database
 import { initializeApp } from "firebase/app";
 import { getFirestore, disableNetwork, enableNetwork } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 // import the screens
 import Start from './components/Start';
@@ -37,6 +38,8 @@ const App = () => {
   // Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
 
+  const storage = getStorage(app);
+
   useEffect(() => {
     if (connectionStatus.isConnected === false) {
       Alert.alert("Connection Lost!");
@@ -53,7 +56,11 @@ const App = () => {
         <Stack.Screen
           name="Chat"
         >
-          {props => <Chat db={db} {...props} />}
+          {props => <Chat 
+          db={db} {...props} 
+          isConnected={connectionStatus.isConnected}
+          storage={storage}
+          />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
