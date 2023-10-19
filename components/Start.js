@@ -110,6 +110,21 @@ const styles = StyleSheet.create({
         padding: '6%',
         flexBasis: 160,
     },
+    textInput: {
+        fontSize: 16,
+        fontWeight: '300',
+        color: '#090C08',
+        padding: 15,
+        borderWidth: 1,
+        borderColor: '#090C08',
+        marginTop: 15,
+        marginBottom: 15,
+    },
+    textColorSelector: {
+        fontSize: 16,
+        fontWeight: '300',
+        color: '#FFFFFF',
+    },
     colorSelector: {
         flex: 1,
         justifyContent: 'space-around',
